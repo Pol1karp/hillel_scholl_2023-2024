@@ -1,52 +1,48 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме </title>
+    <title>Форма з валідацією</title>
     <link rel="stylesheet" href="./style/style.css">
+
 </head>
 
 <body>
-
-    <header>
-        <h1>Рачик Ігор</h1>
-        <p>Розробник веб-сайтів</p>
-    </header>
-
-    <main>
-        <section>
-            <h2>Про мене</h2>
-            <p>Компетентний та креативний розробник веб-сайтів з різноманітним досвідом у створенні зручних та
-                ефективних інтерфейсів.</p>
-        </section>
-
-        <section>
-            <h2>Навички</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>React</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Проекти</h2>
-            <ul>
-                <li><a href="#">Назва проекту 1</a> - У цьому проекті я зробив сайт для продажу ігор в інтернеті.</li>
-                <li><a href="#">Назва проекту 2</a> - У цьому проекті я зробив сайт для онлайн комунікацій із друзями.
-                </li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>Email: <a href="mailto:your.email@example.com">rachik2008@gmail.com</a></p>
-        <p>Телефон: +380959032439</p>
-    </footer>
-
+    <div class="container">
+        <form id="myForm">
+            <div class="form-group">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Прізвище:</label>
+                <input type="text" id="surname" name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" class="form-group" checked required>
+                <input type="radio" name="gender" class="form-group" required>
+                <label for="female">Female</label>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Вік:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Дата народження:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <button type="submit">Відправити</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
