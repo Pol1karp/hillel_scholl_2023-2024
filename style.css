@@ -10,13 +10,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #19cbeb;
+    background-color: #adaaaa;
 }
 
 .container {
     width: 80%;
     max-width: 600px;
-    background-color: #fffb00;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -46,11 +46,11 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #030000;
+    color: #ffffff;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00c3ff;
 }
