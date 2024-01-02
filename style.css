@@ -24,6 +24,7 @@ body {
 
 .form-group {
     margin-bottom: 15px;
+
 }
 
 label {
@@ -54,3 +55,5 @@ button {
 button:hover {
     background-color: #00c3ff;
 }
+
+:placeholder-shown {}
