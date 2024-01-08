@@ -8,7 +8,7 @@
 }
 
 .container {
-    max-width: 1110px;
+    max-width: 77%;
     margin: 0 auto;
 }
 
@@ -124,7 +124,9 @@ a {
     border-radius: 8px;
     border: 2px solid rgb(229, 229, 229);
     padding: 24px;
-    width: 322px;
+    max-width: 29%;
+    min-width: 200px;
+    overflow: hidden
 }
 
 .card_content {
@@ -194,4 +196,8 @@ a:hover svg {
 
 a:active svg {
     transform: scale(1.1);
+}
+
+img {
+    max-width: 100%;
 }
