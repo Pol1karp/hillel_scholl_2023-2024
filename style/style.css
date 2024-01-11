@@ -18,7 +18,7 @@ body {
 header {
     position: sticky;
     top: 0;
-    background-color: #00ffff;
+    background-color: #929695;
     padding: 24px 0;
 }
 
@@ -35,7 +35,7 @@ aside {
     display: flex;
     justify-content: center;
     padding: 20px;
-    background-color: #00ffff;
+    background-color: #929695;
     flex: 1;
 
 }
@@ -56,7 +56,7 @@ section {
 
 footer {
     padding: 24px 0;
-    background-color: rgb(19, 6, 32);
+    background-color: rgb(243, 0, 0);
 }
 
 footer div {
@@ -64,13 +64,14 @@ footer div {
 }
 
 @media screen and (max-width: 600px) {
-    main {
-        flex-direction: column;
+
+    aside {
+        order: 2;
+        max-width: 100%;
     }
 
-    section {
-        order: 0;
-        max-width: 100%;
+    main {
+        flex-direction: column;
     }
 
     nav {
@@ -79,8 +80,11 @@ footer div {
         border-bottom: 4px solid rgb(90, 90, 90);
     }
 
-    aside {
-        order: 2;
+    section {
+        order: 0;
         max-width: 100%;
     }
+
+
+
 }
