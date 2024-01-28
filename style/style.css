@@ -63,7 +63,8 @@
 }
 
 nav {
-    padding: 79px 0px 79px 0px;
+    padding: 79px 8px 79px 8px;
+    margin: 42px;
 }
 
 nav span+span {
@@ -117,7 +118,7 @@ nav span+span {
 
 .project-items {
     display: flex;
-    width: 70%;
+    width: 75%;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -210,6 +211,17 @@ nav span+span {
 
 footer {
     padding: 50px;
+}
+
+@media (max-width: 1920px) {
+    .lg-important {
+        flex-direction: column;
+    }
+
+    .video {
+        align-self: center;
+        justify-content: center;
+    }
 }
 
 /*# sourceMappingURL=index.css.map */
