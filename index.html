@@ -2,137 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>h/w8-9</title>
-    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="big-container">
-        <div class="container">
-            <nav class="navbar navbar-expand-md">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse-elements">
-                    <span><i class="fs-2 bi bi-list"></i></span>
-                </button>
-                <div class="col-12 collapse navbar-collapse mt-4 align-items-center" id="collapse-elements">
-                    <span class="text-blue">Homepage</span>
-                    <span class="ms-2">About author</span>
-                    <span class="ms-2">Works</span>
-                    <span class="ms-2">Process</span>
-                    <span class="ms-2">Contacs</span>
-                </div>
-            </nav>
-            <div style="margin-top: 150px">
-                <h1 style="font-size: 48px">Design and layout</h1>
-                <p class="start text-container text-darkgray" style="margin-top: 60px">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quasi illo cum. Quidem debitis
-                    recusandae maxime libero optio minus ut saepe veniam minima tenetur, repellendus quisquam ducimus
-                    distinctio repellat pariatur.
-                </p>
-                <button class="write-me text-white bg-blue" style="margin-top: 65px">
-                    Write me
-                </button>
-                <br />
-                <br />
-                <br />
-                <br />
-            </div>
-        </div>
-    </div>
-    <div class="text-container">
-        <h1>About Me</h1>
-        <br />
-        <br />
-        <span class="text-darkgray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consequuntur
-            quas architecto delectus nemo perferendis cupiditate maiores quae nostrum! Quos officia tempora libero alias
-            ea laboriosam ex explicabo quam optio?</span>
-    </div>
-    <div class="projects-box bg-blue mt-default">
-        <div class="project-items">
-            <div class="project-item">
-                <img src="./imges/project.svg" alt="" />
-                <div class="project-item-text">
-                    <h3>40+</h3>
-                    <p>projects</p>
-                </div>
-            </div>
+    <script>// // 1.
+        //let numbers = [2, 4, 6, 8, 10, 12, 14, 16, 18];
 
-            <div class="project-item">
-                <img src="./images/project.svg" alt="" />
-                <div class="project-item-text">
-                    <h3>40+</h3>
-                    <p>projects</p>
-                </div>
-            </div>
+        //for (let i = 0; i < numbers.length; i++)
+        //   if (numbers[i] > 3 && numbers[i] < 10) {
+        //       console.log(numbers[i]);
+        //   }
+        // } -->
+        // 2.const array = [1, 2, 5, 9, 4, 13, 4, 10];
 
-            <div class="project-item">
-                <img src="./imges/project.svg" alt="" />
-                <div class="project-item-text">
-                    <h3>40+</h3>
-                    <p>projects</p>
-                </div>
-            </div>
+        // for (let i = 0; i < array.length; i++) {
+        //     if (array[i] === 4) {
+        //         break;
+        //     }
+        // }
+        // 3.const mass = [42, 2, 33, 11, 12, 10, 0];
+        // const sum = mass.reduce((total, num) => total + num, 0);
+        // const average = sum / mass.length;
 
-            <div class="project-item">
-                <img src="./imges/project.svg" alt="" />
-                <div class="project-item-text">
-                    <h3>40+</h3>
-                    <p>projects</p>
-                </div>
-            </div>
+        // console.log(average);
+        // 4.const strings = ["parrot", "bull", "bear", "monkey"];
+        // const totalLength = strings.reduce((sum, str) => sum + str.length, 0);
 
-            <div class="project-item">
-                <img src="./imges/project.svg" alt="" />
-                <div class="project-item-text">
-                    <h3>40+</h3>
-                    <p>projects</p>
-                </div>
-            </div>
+        // console.log(totalLength); // Виведе 21
+        // 5.const arr = ["parrot", 140, "bull", true, 0, "bear", 47, "monkey"];
 
-            <div class="project-item">
-                <img src="./imges/project.svg" alt="" />
-                <div class="project-item-text">
-                    <h3>40+</h3>
-                    <p>projects</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        // const stringArr = arr.filter(item => typeof item === 'string');
 
-    <div class="lg-important">
-        <div class="lg-text">
-            <span>
-                <h1>How do i work</h1>
-                <br />
-                <br />
-            </span>
-
-            <span class="text-darkgray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod consequuntur
-                doloremque veritatis eum? Sit in maiores quibusdam odio, quis veniam suscipit voluptates dolorem ipsa
-                corporis nesciunt temporibus quos impedit! Cumque.</span>
-        </div>
-
-        <div class="video">
-            <iframe width="100%" height="600" src="https://www.youtube.com/embed/-1dS17TWXuo?si=MGBQ7OAmUaa4T_J9"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <footer class="mt-default bg-blue text-white">
-        <div class="container">
-            <h3>John Snow</h3>
-            <br />
-            <div>(c) 2010. All rights reserved.</div>
-        </div>
-    </footer>
-
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        // console.log(stringArr);</script>
 </body>
 
 </html>
