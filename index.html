@@ -4,20 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>h/w13</title>
-    <link rel="stylesheet" href="./style/index.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>h/w14</title>
 </head>
 
 <body>
-    <button id="1">1-st Animation</button>
-    <button id="2">2-nd Animation</button>
-    <button id="3">3-rd Animation</button>
-
-    <div class="obj"></div>
-
-    <script src="./script/script.js"></script>
+    <form action="">
+        <label for="">Имя
+            <input id="nameInput" type="text" placeholder="твое имя" />
+        </label>
+        <br />
+        <label for="">
+            Возрост
+            <input id="ageInput" type="number" min="0" max="299" />
+        </label>
+        <br />
+        <label for="">
+            День жизни
+            <input id="cookieTimeInput" type="number" min="1" max="5" value="2" />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+    <script src="./script.js"></script>
 </body>
 
 </html>

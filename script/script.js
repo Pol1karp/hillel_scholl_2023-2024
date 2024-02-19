@@ -1,89 +1,35 @@
-var _3rdTaskStatus = false;
+let username = document.querySelector("#nameInput");
+let age = document.querySelector("#ageInput");
+let cookieTime = document.querySelector("#cookieTimeInput");
+let submit = document.querySelector("button");
 
-$("button#1").on("click", function () {
-    $(".obj")
-        .animate(
-            {
-                left: 500,
-                top: 0,
-            },
-            1000
-        )
-        .animate(
-            {
-                left: 500,
-                top: 300,
-            },
-            1000
-        )
-        .animate(
-            {
-                left: 0,
-                top: 300,
-            },
-            1000
-        )
-        .animate(
-            {
-                left: 0,
-                top: 0,
-            },
-            1000
-        );
-});
+let loadName = getCookie("username");
+let loadAge = getCookie("age");
 
-$("button#2").on("click", function () {
-    $(".obj")
-        .animate(
-            {
-                left: 300,
-                top: 0,
-            },
-            1000
-        )
-        .animate(
-            {
-                left: 150,
-                top: -300,
-            },
-            1000
-        )
-        .animate(
-            {
-                left: 0,
-                top: 0,
-            },
-            1000
-        );
-});
+function setCookie(cName, cValue, expDays) {
+    let date = new Date();
+    date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+}
 
-$("button#3").on("click", function () {
-    if (_3rdTaskStatus === false) {
-        $(".obj")
-            .animate(
-                {
-                    opacity: 0,
-                },
-                1
-            )
-            .animate(
-                {
-                    width: 400,
-                    height: 400,
-                    opacity: 1,
-                },
-                1000
-            )
-            .fadeIn();
-        _3rdTaskStatus = true;
-    } else if (_3rdTaskStatus === true) {
-        $(".obj").animate(
-            {
-                width: 100,
-                height: 100,
-            },
-            1000
-        );
-        _3rdTaskStatus = false;
+function getCookie(name) {
+    let cookieArr = document.cookie.split(";");
+    for (let i = 0; i < cookieArr.length; i++) {
+        let cookiePair = cookieArr[i].split("=");
+        if (name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
     }
+
+    return null;
+}
+
+submit.addEventListener("click", function () {
+    setCookie("username", username.value, cookieTime.value);
+    setCookie("age", age.value, cookieTime.value);
 });
+if (loadName != null && loadAge != null) {
+    document.write(loadName + "<br>");
+    document.write(loadAge);
+}
