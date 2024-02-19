@@ -1,17 +1,89 @@
-function _1task() {
-    $("#addHtmlt").html("<h1> New Element </h1>");
-}
-function _2task() {
-    $(".class").hide();
-}
-function _3task() {
-    $("section").remove();
-}
-function _4task() {
-    $("div:last").addClass("addClass").text("Lumos Maxima");
-}
+var _3rdTaskStatus = false;
 
-_1task();
-_2task();
-_3task();
-_4task();
+$("button#1").on("click", function () {
+    $(".obj")
+        .animate(
+            {
+                left: 500,
+                top: 0,
+            },
+            1000
+        )
+        .animate(
+            {
+                left: 500,
+                top: 300,
+            },
+            1000
+        )
+        .animate(
+            {
+                left: 0,
+                top: 300,
+            },
+            1000
+        )
+        .animate(
+            {
+                left: 0,
+                top: 0,
+            },
+            1000
+        );
+});
+
+$("button#2").on("click", function () {
+    $(".obj")
+        .animate(
+            {
+                left: 300,
+                top: 0,
+            },
+            1000
+        )
+        .animate(
+            {
+                left: 150,
+                top: -300,
+            },
+            1000
+        )
+        .animate(
+            {
+                left: 0,
+                top: 0,
+            },
+            1000
+        );
+});
+
+$("button#3").on("click", function () {
+    if (_3rdTaskStatus === false) {
+        $(".obj")
+            .animate(
+                {
+                    opacity: 0,
+                },
+                1
+            )
+            .animate(
+                {
+                    width: 400,
+                    height: 400,
+                    opacity: 1,
+                },
+                1000
+            )
+            .fadeIn();
+        _3rdTaskStatus = true;
+    } else if (_3rdTaskStatus === true) {
+        $(".obj").animate(
+            {
+                width: 100,
+                height: 100,
+            },
+            1000
+        );
+        _3rdTaskStatus = false;
+    }
+});
