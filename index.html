@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>h/w14</title>
+    <title>h/w15</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <form action="">
-        <label for="">Имя
-            <input id="nameInput" type="text" placeholder="твое имя" />
-        </label>
-        <br />
-        <label for="">
-            Возрост
-            <input id="ageInput" type="number" min="0" max="299" />
-        </label>
-        <br />
-        <label for="">
-            День жизни
-            <input id="cookieTimeInput" type="number" min="1" max="5" value="2" />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-    </form>
-    <script src="./script.js"></script>
+    <div class="container">
+        <form action="" method="post" class="mt-5">
+            <h1 class="bg-primary text-secondary text-center w-50 mx-auto rounded">
+                Contacts
+            </h1>
+            <br />
+            <input type="text" placeholder="Введите имя контакта" class="d-block mx-auto w-25 text-center"
+                id="contactName" />
+            <input type="text" placeholder="Введите его/ее номер" class="d-block mx-auto w-25 text-center"
+                id="contactNumber" />
+            <br />
+            <button type="submit" class="d-block mx-auto" id="submit">
+                Submit
+            </button>
+        </form>
+
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nav</th>
+                </tr>
+            </thead>
+            <tbody id="contactsZone"></tbody>
+        </table>
+    </div>
+
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
