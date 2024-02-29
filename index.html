@@ -1,45 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>h/w15</title>
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <link rel="stylesheet" href="./style/style.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>h/w16</title>
 </head>
 
 <body>
-    <div class="container">
-        <form action="" method="post" class="mt-5">
-            <h1 class="bg-primary text-secondary text-center w-50 mx-auto rounded">
-                Contacts
-            </h1>
-            <br />
-            <input type="text" placeholder="Введите имя контакта" class="d-block mx-auto w-25 text-center"
-                id="contactName" />
-            <input type="text" placeholder="Введите его/ее номер" class="d-block mx-auto w-25 text-center"
-                id="contactNumber" />
-            <br />
-            <button type="submit" class="d-block mx-auto" id="submit">
-                Submit
-            </button>
-        </form>
-
-        <table class="table text-center">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Number</th>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nav</th>
-                </tr>
-            </thead>
-            <tbody id="contactsZone"></tbody>
-        </table>
-    </div>
+    <form action="" method="post">
+        <h1>Счетчик времени работы пользователя</h1>
+        <h2>Введите время в минутах</h2>
+        <input class="time" type="number" placeholder="Введите время в минутах" value="1" />
+        <br />
+        <br />
+        <button class="stopInterval">Остановить интервал</button>
+        <br />
+        <button class="submit" type="submit">Подтвердить</button>
+    </form>
+    <progress class="progressBar" value="0"></progress>
 
     <script src="./script/script.js"></script>
 </body>

@@ -1,74 +1,29 @@
-let arrayContacts = [];
-
-let contactName = document.querySelector("#contactName");
-let contactNumber = document.querySelector("#contactNumber");
-let submit = document.querySelector("#submit");
-let contactsZone = document.getElementById("contactsZone");
-
-window.onload = () => {
-    arrayContacts = JSON.parse(localStorage.getItem("contacts"));
-
-    if (arrayContacts != null) {
-        arrayContacts.forEach((contact) => {
-            contactsZone.innerHTML += `
-    <tr>
-        <td>${contact.name}</td>
-        <td>${contact.number}</td>
-        <td>${contact.id}</td>
-        <td><button class="deleteButton" onclick="deletePerson(event)">X</button></td>
-    </tr>
-    `;
-        });
-    } else {
-        arrayContacts = [];
-    }
-};
-
-function Contact(name, number, id) {
-    this.name = name;
-    this.number = number;
-    this.id = id;
-}
+let time = document.querySelector(".time");
+let submit = document.querySelector(".submit");
+let deleteInterval = document.querySelector(".stopInterval");
+let progressBar = document.querySelector(".progressBar");
+let timeInterval = undefined;
+let progressBarInterval = undefined;
+let websiteTime = 0;
 
 submit.addEventListener("click", function (event) {
     event.preventDefault();
-    let usernameID = 1;
-    arrayContacts.forEach((contact) => {
-        if (contact.name === contactName.value) {
-            usernameID += 1;
-        }
-    });
-    if (contactName.value.length > 0 && contactNumber.value.length > 0) {
-        let newUser = new Contact(
-            contactName.value,
-            contactNumber.value,
-            usernameID
-        );
-        arrayContacts.push(newUser);
-        localStorage.setItem("contacts", JSON.stringify(arrayContacts));
-
-        contactName.value = "";
-        contactNumber.value = "";
-
-        console.log(arrayContacts);
-    } else {
-        alert("все поля должны быт наполнеными");
-    }
-    location.reload();
+    timeInterval = setInterval(timeMeasure, Number(time.value * 1000 * 60));
+    progressBarInterval = setInterval(function () {
+        websiteTime += 1000;
+        progressBar.value = websiteTime / 60 / time.value / 1000;
+    }, 1000);
 });
-function deletePerson(event) {
-    let name =
-        event.currentTarget.parentNode.parentNode.children[0].innerText.trim();
-    let id =
-        event.currentTarget.parentNode.parentNode.children[2].innerText.trim();
 
-    for (i = 0; i < arrayContacts.length; i++) {
-        if (arrayContacts[i].name == name && arrayContacts[i].id == id) {
-            arrayContacts.splice(i, 1);
+deleteInterval.addEventListener("click", stopInterval);
 
-            localStorage.setItem("contacts", JSON.stringify(arrayContacts));
-        }
-    }
+function timeMeasure() {
+    websiteTime = 0;
+    alert(`Время для отдыха), Вы роботаете  ${Number(time.value)} минут`);
+}
 
-    location.reload();
+function stopInterval(event) {
+    event.preventDefault();
+    clearInterval(timeInterval);
+    clearInterval(progressBarInterval);
 }
