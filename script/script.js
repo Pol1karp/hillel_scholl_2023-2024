@@ -1,33 +1,43 @@
-let agencyButtons = Array.from(document.getElementsByClassName("agencyButton"));
+let colorInput = document.getElementById("colorInput");
+let transInput = document.getElementById("transperencyInput");
+let clearButton = document.getElementById("clearButton");
 
-let astronautsContainer = document.querySelector("#astronautsBox");
+let sx = undefined;
+let ex = undefined;
+let sy = undefined;
+let ey = undefined;
 
-var astronautsGlobal = undefined;
-
-fetch("https://api.spacexdata.com/v4/crew")
-    .then((response) => {
-        return response.json();
-    })
-    .then((astronauts) => {
-        astronautsGlobal = astronauts;
-    });
-agencyButtons.forEach((element) => {
-    element.addEventListener("click", function (event) {
-        astronautsContainer.innerHTML = "";
-        astronautsGlobal.forEach((astronaut) => {
-            if (astronaut.agency === event.target.innerText) {
-                astronautsContainer.innerHTML += `
-    <div class="card col-3 mt-5" style="width: 18rem;">
-        <img src="${astronaut.image}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">${astronaut.name}</h5>
-        <p class="card-text">Agency: ${astronaut.agency}<br>
-        Wikipedia: <a>${astronaut.wikipedia}</a> </p>
-        <a href="${astronaut.wikipedia}" class="btn btn-primary mt-auto">Проверь его или ее wiki</a>
-        </div>
-    </div>
-    `;
-            }
-        });
-    });
+var c = document.getElementById("canvas");
+var rect = c.getBoundingClientRect();
+var ctx = c.getContext("2d");
+var img = new Image();
+img.src = "img/imgs.avif";
+img.onload = () => {
+    c.width = 612;
+    c.height = 408;
+    ctx.drawImage(img, 0, 0, 612, 408);
+};
+c.addEventListener("mousedown", function (e) {
+    sx = e.clientX - rect.left;
+    sy = e.clientY - rect.top;
+    console.log(sx);
 });
+c.addEventListener("mouseup", function (e) {
+    ex = e.clientX - rect.left;
+    ey = e.clientY - rect.top;
+    console.log(ex);
+    createFilter();
+});
+
+clearButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    ctx.clearRect(0, 0, 612, 408);
+    ctx.globalAlpha = 1;
+    ctx.drawImage(img, 0, 0, 612, 408);
+});
+
+function createFilter() {
+    ctx.globalAlpha = transInput.value / 100;
+    ctx.fillStyle = colorInput.value;
+    ctx.fillRect(sx, sy, ex - sx, ey - sy);
+}
