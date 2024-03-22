@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>h/w19</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>h/w20</title>
 </head>
 
 <body>
-    <label>
-        базавый цвет
-        <input id="colorInput" type="color" />
-    </label>
-    <br />
-    <label>
-        альфа канал(прозрачность в проценатх)
-        <input id="transperencyInput" type="number" value="30" />
-    </label>
-    <br />
-    <br />
-    <canvas id="canvas"></canvas>
-    <br />
-    <br />
-    <button id="clearButton">очистить холст</button>
-    <script src="./script/script.js"></script>
+    <h1>Space Invaders</h1>
+    <canvas id="canvas-animation" width="600" height="600">
+        Браузер неподержует канвас
+    </canvas>
+
+    <img src="./img/ship5.png" alt="ship" id="source" />
+
+    <script src="ship_2.js"></script>
+    <script src="bullets.js"></script>
 </body>
 
 </html>
